@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int FRAGMENT_VERSELIST=5;
     public static final int FRAGMENT_INFOVERSE=6;
     public static final int FRAGMENT_FINISHED=7;
+    //public static final int FRAGMENT_DOWNLOADER=8;
     Fragment main;
     FragmentManager.BackStackEntry backStackEntry;
 
@@ -90,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 case FRAGMENT_FINISHED:
                     fragment = new finished_fragment();
                     break;
+                //case FRAGMENT_DOWNLOADER:
+                    //fragment = new downloader_fragment();
             }
         if (fragment != null) {
             tempTransaction.replace(R.id.frame, fragment);
