@@ -72,5 +72,26 @@ public class FirebaseBibleVerseManager {
                 .child("book_" + bookId).child("chapter_" + chapterNum);
         chapterRef.removeValue();
     }
+    /** 해당 bookId 중 얼마나 많은 구절이 읽혔는지 나타내는 메소드 **/
+    public int getReadVersesInBook(String userId, int bookId) {
+        DatabaseReference bookRef = databaseReference.child("users").child(userId).child("readVerses")
+                .child("book_" + bookId);
+        try {
+            DataSnapshot bookSnapshot = Tasks.await(bookRef.get());
+            int readVerseCount = 0;
+            for (DataSnapshot chapterSnapshot : bookSnapshot.getChildren()) {
+                for (DataSnapshot verseSnapshot : chapterSnapshot.getChildren()) {
+                    if ((verseSnapshot.getValue(Boolean.class) != null)) {
+                        readVerseCount++;
+                    }
+                }
+            }
+            return readVerseCount;
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            // Handle the exception
+            return 0; // or throw an exception if needed
+        }
+    }
 
 }

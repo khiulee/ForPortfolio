@@ -1,5 +1,5 @@
 package com.example.forportfolio.usefulutils;
-
+/**일일이 파일을 **/
 public class BibleBookId {
     public static final String[] OLD_LIST=
             {"ge","exo","lev","num","deu"

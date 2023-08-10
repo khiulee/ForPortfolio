@@ -22,12 +22,6 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
     @Test
-    public void cutString_isCorrect() {
-        CharacterCutter characterCutter = new CharacterCutter("나는 점심으로 짜파게티를 야무지게 먹는다");
-        characterCutter.setBlanks();
-        System.out.println(characterCutter.getStringWithBlanks());
-    }
-    @Test
     public void webcrawling_isWorking() {
         BibleVerseGetter verseGetter = new BibleVerseGetter(0,BibleVerseGetter.FIRST_LINE,BibleVerseGetter.FIRST_LINE);
         System.out.println(verseGetter.getVerse());
