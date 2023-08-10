@@ -81,7 +81,8 @@ public class FirebaseBibleVerseManager {
             int readVerseCount = 0;
             for (DataSnapshot chapterSnapshot : bookSnapshot.getChildren()) {
                 for (DataSnapshot verseSnapshot : chapterSnapshot.getChildren()) {
-                    if ((verseSnapshot.getValue(Boolean.class) != null)) {
+                    Boolean verseValue = verseSnapshot.getValue(Boolean.class);
+                    if (verseValue != null) {
                         readVerseCount++;
                     }
                 }
