@@ -1,15 +1,10 @@
 package com.example.forportfolio;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 import com.example.forportfolio.usefulutils.BibleVerseGetter;
-import com.example.forportfolio.usefulutils.CharacterCutter;
-
-import java.io.IOException;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
